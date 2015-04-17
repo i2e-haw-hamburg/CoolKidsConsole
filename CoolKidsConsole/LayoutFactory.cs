@@ -2,7 +2,7 @@
 
 namespace CoolKidsConsole
 {
-    public class Factory
+    public class LayoutFactory
     {
         public static ILayout CreateBaseLayout(string title = "")
         {

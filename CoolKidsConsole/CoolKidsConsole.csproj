@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Factory.cs" />
+    <Compile Include="LayoutFactory.cs" />
     <Compile Include="Internal\Drawer.cs" />
     <Compile Include="Layout\BaseLayout.cs" />
     <Compile Include="Layout\Elements\BasePanel.cs" />

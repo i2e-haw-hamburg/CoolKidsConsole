@@ -1,4 +1,5 @@
-﻿using CoolKidsConsole.Internal;
+﻿using System;
+using CoolKidsConsole.Internal;
 using CoolKidsConsole.Layout.Elements;
 
 namespace CoolKidsConsole.Layout
@@ -21,6 +22,11 @@ namespace CoolKidsConsole.Layout
         public void SetTitle(string title)
         {
             header.Content = title;
+        }
+
+        public void Close(object sender, EventArgs e)
+        {
+            _drawer.Stop();
         }
     }
 }

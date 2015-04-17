@@ -9,6 +9,7 @@ namespace CoolKidsConsole.Internal
     {
         public IList<APanel> panels;
         private Thread t;
+        private bool run = true;
 
         public Drawer() : this(80, 50)
         {
@@ -27,7 +28,7 @@ namespace CoolKidsConsole.Internal
 
         private void RunLoop()
         {
-            while (true)
+            while (run)
             {
                 foreach (var panel in panels)
                 {
@@ -40,6 +41,14 @@ namespace CoolKidsConsole.Internal
                 Thread.Sleep(30);
             }
             
+        }
+
+        public void Stop()
+        {
+            run = false;
+            t.Join();
+            Console.Clear();
+            Console.CursorVisible = true;
         }
     }
 }
