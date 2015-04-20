@@ -41,6 +41,9 @@
   <ItemGroup>
     <Compile Include="LayoutFactory.cs" />
     <Compile Include="Internal\Drawer.cs" />
+    <Compile Include="Layout\Elements\IUpdatable.cs" />
+    <Compile Include="Layout\Elements\ListPanel.cs" />
+    <Compile Include="Layout\TwoColumnLayout.cs" />
     <Compile Include="Layout\BaseLayout.cs" />
     <Compile Include="Layout\Elements\BasePanel.cs" />
     <Compile Include="Layout\Elements\Header.cs" />

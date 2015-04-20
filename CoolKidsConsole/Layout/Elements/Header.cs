@@ -2,7 +2,7 @@
 
 namespace CoolKidsConsole.Layout.Elements
 {
-    class Header : APanel
+    class Header : APanel<String>
     {
         private String content;
         

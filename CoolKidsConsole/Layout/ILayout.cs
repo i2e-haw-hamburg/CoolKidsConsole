@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
+using System.Collections.Generic;
 
 namespace CoolKidsConsole.Layout
 {
     public interface ILayout
     {
-        void Close(object sender, EventArgs e);
+        void SetTitle(String title);
+        void Update(IList<String> content);
+        void Update(String content);
     }
 }

@@ -10,5 +10,12 @@ namespace CoolKidsConsole
             l.SetTitle(title);
             return l;
         }
+
+        public static ILayout Create2ColumnLayout(string title = "")
+        {
+            var l = new TwoColumnLayout(80, 30);
+            l.SetTitle(title);
+            return l;
+        }
     }
 }
