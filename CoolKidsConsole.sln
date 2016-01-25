@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoolKidsConsole", "CoolKidsConsole\CoolKidsConsole.csproj", "{EBC2BBCB-E108-4EB9-8B80-349EEE305304}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoolKidsConsoleSampleApp", "CoolKidsConsoleSampleApp\CoolKidsConsoleSampleApp.csproj", "{766674CA-0120-4996-A20A-A0EEC8341741}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoolKidsConsoleTest", "CoolKidsConsoleTest\CoolKidsConsoleTest.csproj", "{59ABA51E-8AF0-4140-BD9E-553F7106BE50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{766674CA-0120-4996-A20A-A0EEC8341741}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{766674CA-0120-4996-A20A-A0EEC8341741}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{766674CA-0120-4996-A20A-A0EEC8341741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59ABA51E-8AF0-4140-BD9E-553F7106BE50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59ABA51E-8AF0-4140-BD9E-553F7106BE50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59ABA51E-8AF0-4140-BD9E-553F7106BE50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59ABA51E-8AF0-4140-BD9E-553F7106BE50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

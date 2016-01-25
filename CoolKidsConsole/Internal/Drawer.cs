@@ -36,7 +36,7 @@ namespace CoolKidsConsole.Internal
                 {
                     panel.Update();
                 }
-                Thread.Sleep(30);
+                Thread.Sleep(60);
             }
             Console.SetCursorPosition(Console.WindowHeight, 0);
             Console.Clear();
