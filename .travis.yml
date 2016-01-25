@@ -1,7 +1,7 @@
 language: csharp
 mono:
   - alpha
-env: VERSION=0.3.2
+env: VERSION=0.1.1
 solution: CoolKidsConsole.sln
 install:
   - nuget restore CoolKidsConsole.sln
