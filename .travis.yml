@@ -1,14 +1,13 @@
 language: csharp
 mono:
   - alpha
-env: VERSION=0.3.2
+env: VERSION=0.1.1
 solution: CoolKidsConsole.sln
 install:
   - nuget restore CoolKidsConsole.sln
-  - nuget install xunit.runners -Version 2.0.0 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release CoolKidsConsole.sln
-  - mono ./packages/xunit.runner.console.2.0.0/tools/xunit.console.exe  ./CoolKidsConsoleTest/bin/Release/CoolKidsConsoleTest.dll -noshadow
+  - mono ./packages/xunit.runner.console.2.1.0/tools/xunit.console.exe  ./CoolKidsConsoleTest/bin/Release/CoolKidsConsoleTest.dll -noshadow
 deploy:
   provider: script
   skip_cleanup: true
