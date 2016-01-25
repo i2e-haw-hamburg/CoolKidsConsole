@@ -1,4 +1,5 @@
-﻿using CoolKidsConsole;
+﻿using System;
+using CoolKidsConsole;
 
 namespace CoolKidsConsoleSampleApp
 {
@@ -6,8 +7,7 @@ namespace CoolKidsConsoleSampleApp
     {
         static void Main(string[] args)
         {
-            var layout = Factory.CreateBaseLayout("Hello World");
-
+            var layout = LayoutFactory.CreateBaseLayout("Hello World");
         }
     }
 }

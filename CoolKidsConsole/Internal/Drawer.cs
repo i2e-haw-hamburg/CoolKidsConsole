@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using CoolKidsConsole.Layout.Elements;
 
@@ -7,8 +8,9 @@ namespace CoolKidsConsole.Internal
 {
     class Drawer
     {
-        public IList<APanel> panels;
+        public IList<IUpdatable> panels;
         private Thread t;
+        private bool run = true;
 
         public Drawer() : this(80, 50)
         {
@@ -19,27 +21,32 @@ namespace CoolKidsConsole.Internal
         {
             Console.SetWindowSize(width, height+1);
             Console.CursorVisible = false;
-            panels = new List<APanel>();
+            panels = new List<IUpdatable>();
             Console.Clear();
+            Console.CancelKeyPress += Stop;
             t = new Thread(RunLoop);
             t.Start();
         }
 
         private void RunLoop()
         {
-            while (true)
+            while (run)
             {
-                foreach (var panel in panels)
+                foreach (var panel in panels.Where(panel => panel.NeedUpdate()))
                 {
-                    if (panel.NeedUpdate())
-                    {
-                        panel.Update();
-                    }
+                    panel.Update();
                 }
-                Console.SetCursorPosition(0, 0);
-                Thread.Sleep(30);
+                Thread.Sleep(60);
             }
-            
+            Console.SetCursorPosition(Console.WindowHeight, 0);
+            Console.Clear();
+            Console.CursorVisible = true;
+        }
+
+        public void Stop(object sender, ConsoleCancelEventArgs consoleCancelEventArgs)
+        {
+            run = false;
+            t.Join();
         }
     }
 }

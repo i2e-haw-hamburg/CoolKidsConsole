@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CoolKidsConsole.Layout.Elements
 {
-    abstract class APanel
+    abstract class APanel<T> : IUpdatable
     {
         protected int x1;
         protected int y1;
@@ -56,7 +57,7 @@ namespace CoolKidsConsole.Layout.Elements
             get { return y2 - y1; }
         }
 
-        public abstract string Content { get; set; }
+        public abstract T Content { get; set; }
 
         protected void DrawBorder()
         {
@@ -77,6 +78,12 @@ namespace CoolKidsConsole.Layout.Elements
         {
             Console.SetCursorPosition(x, y);
             Console.Write(s);
+        }
+
+        protected static IEnumerable<string> ChunksUpto(string str, int maxChunkSize)
+        {
+            for (int i = 0; i < str.Length; i += maxChunkSize)
+                yield return str.Substring(i, Math.Min(maxChunkSize, str.Length - i));
         }
 
         protected abstract void DrawContent();

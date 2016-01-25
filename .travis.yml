@@ -1,0 +1,18 @@
+language: csharp
+mono:
+  - alpha
+env: VERSION=0.3.2
+solution: CoolKidsConsole.sln
+install:
+  - nuget restore CoolKidsConsole.sln
+  - nuget install xunit.runners -Version 2.0.0 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release CoolKidsConsole.sln
+  - mono ./packages/xunit.runner.console.2.0.0/tools/xunit.console.exe  ./CoolKidsConsoleTest/bin/Release/CoolKidsConsoleTest.dll -noshadow
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - cd CoolKidsConsole && nuget pack CoolKidsConsole.nuspec -Version $VERSION -IncludeReferencedProjects -Prop Configuration=Release && nuget push *.nupkg $NUGET_API_KEY -verbosity detailed
+  on:
+    branch: master

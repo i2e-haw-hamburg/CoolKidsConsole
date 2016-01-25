@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>i2e.cool-kids-console</id>
+    <version>$version$</version>
+    <title>Cool Kids Console</title>
+    <authors>Christian Blank</authors>
+    <owners>Christian Blank</owners>
+    <licenseUrl>https://github.com/i2e-haw-hamburg/CoolKidsConsole</licenseUrl>
+    <projectUrl>https://github.com/i2e-haw-hamburg/CoolKidsConsole</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A .NET UI library for console applications</description>
+    <tags>console ui</tags>
+  </metadata>
+  <files>
+    <file src="bin/Release/CoolKidsConsole.dll" target="lib\net45\"/>
+  </files>
+</package>
